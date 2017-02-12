@@ -29,16 +29,12 @@ function normalize() {
         real = Array.of({ if: args[0], val: args[1], else: args[2] });
     }
 
-    if (typeof real[real.length - 1].if !== 'undefined') {
-        real.push({ if: false });
-    }
-
     var maped = real.map(argFilter);
 
     return maped;
 }
 
-function argFilter(arg) {
+function argFilter(arg, ind, arr) {
     var real = null;
     if ((typeof arg === 'undefined' ? 'undefined' : _typeof(arg)) !== 'object') {
         real = { val: arg };
@@ -54,7 +50,7 @@ function argFilter(arg) {
         real.val = '';
     }
 
-    if (!real.hasOwnProperty('else')) {
+    if (ind == arr.length - 1 && !real.hasOwnProperty('else')) {
         real.else = '';
     }
 
