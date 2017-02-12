@@ -22,5 +22,14 @@
   "bugs": {
     "url": "https://github.com/minhlucvan/react-conditional-attribute/issues"
   },
-  "homepage": "https://github.com/minhlucvan/react-conditional-attribute#readme"
+  "homepage": "https://github.com/minhlucvan/react-conditional-attribute#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.22.0",
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-eslint": "^3.0.1",
+    "gulp-mocha": "^3.0.1",
+    "gulp-rename": "^1.2.2"
+  }
 }
