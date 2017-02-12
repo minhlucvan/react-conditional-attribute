@@ -32,7 +32,7 @@ import ReactDom from 'react-dom'
 import atrr from 'react-conditional-attribute';
 
 const Hello = ({isActive}) => (  
-    <div value={attr(isActive, 'vvh')}>hello world.</div>
+    <div className={attr(isActive, 'enabled', 'disabled'); }>hello world.</div>
 );
 
 ReactDom.render(<Hello isActive={true} />, document.querySelector('#app'));
