@@ -1,8 +1,8 @@
 {
   "name": "react-conditional-attribute",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple utility for conditionally render jsx attributes",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "gulp test"
   },
@@ -25,18 +25,11 @@
   "homepage": "https://github.com/minhlucvan/react-conditional-attribute#readme",
   "devDependencies": {
     "babel-preset-es2015": "^6.22.0",
-    "babelify": "^7.3.0",
-    "browserify": "^14.0.0",
     "chai": "^3.5.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
-    "gulp-browserify": "^0.5.1",
     "gulp-eslint": "^3.0.1",
     "gulp-mocha": "^3.0.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-sourcemaps": "^2.4.1",
-    "gulp-uglify": "^2.0.1",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "gulp-rename": "^1.2.2"
   }
 }
