@@ -2,7 +2,12 @@ var gulp = require('gulp');
 var eslint = require('gulp-eslint');
 var babel = require('gulp-babel');
 var mocha = require('gulp-mocha');
-var rename = require('gulp-rename');
+var browserify  = require('browserify');
+var babelify    = require('babelify');
+var source      = require('vinyl-source-stream');
+var buffer      = require('vinyl-buffer');
+var uglify      = require('gulp-uglify');
+var sourcemaps  = require('gulp-sourcemaps');
 
 gulp.task('test', function(){ 
     gulp.src('./test/index.js')
@@ -20,12 +25,15 @@ gulp.task('lint', function(){
 });
  
 gulp.task('build', function(){
-    return gulp.src('./src/index.js')
-        .pipe(babel({
-            presets: ['es2015']
-        }))
-        .pipe(rename("react-attr.js"))
-        .pipe(gulp.dest('dist'));
+    return browserify({entries: './src/index.js', debug: true})
+        .transform("babelify", { presets: ["es2015"] })
+        .bundle()
+        .pipe(source('react-attr.js'))
+        .pipe(buffer())
+        .pipe(sourcemaps.init())
+        .pipe(uglify())
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('default', ['test', 'lint', 'build'], function () {

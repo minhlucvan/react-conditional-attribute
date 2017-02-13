@@ -1,6 +1,6 @@
 "use strict";
 
-import attr from '../src';
+import attr from '../src/index';
 import {describe} from 'mocha';
 import {expect, assert} from 'chai';
 

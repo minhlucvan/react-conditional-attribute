@@ -42,8 +42,8 @@ ReactDom.render(<Hello isActive={true} />, document.querySelector('#app'));
 if you want to render a litte bit complecated condition see below.
 
 ```javascript
-const Hello = ({isActive}) => (  
-    <div someAttribute={attr({if: cond1, val: 'value 1' }, {if: cond2, val: 'value 2' }, {if: cond3, val: 'value 3' }, {if: cond4, val: 'value 4' })}>hello world.</div>
+const Hello = ({cond1, cond2, cond3}) => (  
+    <div someAttribute={attr({if: cond1, val: 'value 1' }, {if: cond2, val: 'value 2' }, {if: cond3, val: 'value 3', else: 'not matched' })}>hello world.</div>
 );
 
 ```
